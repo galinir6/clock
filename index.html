@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body onload="showTime()" id="index">
+    <h1 style="color: rgb(232, 114, 222);">clock</h1>
+
+    <div id="clock">
+        <span id="hours"></span>
+        <span id="minutes"></span>
+        <span id="seconds"></span>
+    </div>
+
+
+
+
+
+    <script>
+
+
+
+        const showTime = () => {
+            const today = new Date()
+            const h = today.getHours()
+            const m = today.getMinutes()
+            const s = today.getSeconds()
+
+            hours.innerHTML = (h < 10 ? "0" + h : h) + ":"
+            minutes.innerHTML = (m < 10 ? "0" + m : m) + ":"
+            seconds.innerHTML = (s < 10 ? "0" + s : s)
+
+            hours.style.color = `rgb(${s * 10 % 255},${s * 70 % 255},${s * 30 % 255})`
+            minutes.style.color = `rgb(${s * 40 % 255},${s * 200 % 255},${s * 110 % 255})`
+            seconds.style.color = `rgb(${s * 20 % 255},${s * 90 % 255},${s * 300 % 255})`
+
+            if (h < 16 && h >= 6) {
+                index.style.background = `rgb(86, 222,195)`
+            } else {
+
+                index.style.background = `rgb(44,43,48)`
+            }
+
+
+        }
+
+        setInterval(showTime, 1000)
+
+    </script>
+</body>
+
+</html>
